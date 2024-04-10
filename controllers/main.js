@@ -1,5 +1,5 @@
 
-const { staticFile } = require('../index');
+const { staticFile } = require('../appModules/http-utils/index');
 
 async function mainRouteController(res, publicUrl, extname) {
     res.statusCode = 200;

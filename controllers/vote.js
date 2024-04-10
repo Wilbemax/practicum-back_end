@@ -1,4 +1,4 @@
-const {parseBody }= require('../index');
+const {parseBody}= require('../appModules/http-utils/index');
 
 async function voteRouteController(req, res) {
     if (req.method !== "POST") {

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path"); 
-const mimeTypes = require('../../index');
+const mimeTypes = require('./mime-types');
 
 function staticFile(res, filePath, ext) {
     

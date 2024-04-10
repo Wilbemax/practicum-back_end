@@ -1,5 +1,5 @@
 const path = require("path");
-const {staticFile, mimeTypes} = require('../index');
+const {staticFile, mimeTypes} = require('../appModules/http-utils/index');
 
 
 async function defaultRouteController(res, url) {
