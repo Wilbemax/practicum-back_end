@@ -6,7 +6,6 @@ function parseBody(req) {
       body += chunk.toString();
     });
     req.on("end", () => {
-      console.log('parseBody is worked ');
       resolve(body);
     });
     req.on("error", (e) => {

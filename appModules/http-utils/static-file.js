@@ -22,7 +22,6 @@ function staticFile(res, filePath, ext) {
                 res.statusCode = 500;
                 res.end("Internal Server Error");
             } else {
-                console.log('staticFile is worked');
                 res.end(data);
             }
         });

@@ -20,7 +20,6 @@ async function makeRatingFile(path, array) {
     }
   });
 
-console.log('makeRatingFile worked');
   await fs.writeFile(path, JSON.stringify(ratingArray));
 }
 
