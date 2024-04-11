@@ -1,13 +1,18 @@
-function parseBody(req, callback) {
-    let body = "";
+
+function parseBody(req) {
+  return new Promise((resolve, reject) => {
+     let body = "";
     req.on("data", (chunk) => {
       body += chunk.toString();
     });
     req.on("end", () => {
-      callback(null, body);
+      console.log('parseBody is worked ');
+      resolve(body);
     });
-    req.on("error", (error) => {
-        callback(error, null);
+    req.on("error", (e) => {
+        reject(e);
       });
+  })
+   
   }
   module.exports = parseBody;

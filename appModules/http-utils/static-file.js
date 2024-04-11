@@ -7,8 +7,8 @@ function staticFile(res, filePath, ext) {
     const fullPath = path.join("./public", filePath);
 
     
-    fs.access(fullPath, fs.constants.F_OK, (err) => {
-        if (err) {
+    fs.access(fullPath, fs.constants.F_OK, (e) => {
+        if (e) {
             res.statusCode = 404;
             res.end("Not Found");
             return;
@@ -16,12 +16,13 @@ function staticFile(res, filePath, ext) {
 
         
         res.setHeader("Content-Type", mimeTypes[ext] || "application/octet-stream");
-        fs.readFile(fullPath, (err, data) => {
-            if (err) {
-                console.error(err);
+        fs.readFile(fullPath, (e, data) => {
+            if (e) {
+                console.error(e);
                 res.statusCode = 500;
                 res.end("Internal Server Error");
             } else {
+                console.log('staticFile is worked');
                 res.end(data);
             }
         });

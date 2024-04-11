@@ -4,7 +4,18 @@ async function voteRouteController(req, res) {
     if (req.method !== "POST") {
       res.statusCode = 404;
       res.end("Not Found");
+      return
     }
+
+    try{
+      const body = await parseBody(req)
+      console.log(body)
+      res.statusCode = 200
+    }catch (e) {
+      res.statusCode = 500
+      res.end(e)
+    }
+
     parseBody(req, (err, body) => {
         if (err) {
           res.statusCode = 500;
