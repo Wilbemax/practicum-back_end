@@ -21,6 +21,7 @@ console.log(body);
 	
 		let data = null
 		try {
+			// data = JSON.parse(body); --------------------------------------------------------------------------------- в теории так☠️🥲
 			data = body;
 		} catch (e) {
 			console.error('Error parsing JSON:', e);
