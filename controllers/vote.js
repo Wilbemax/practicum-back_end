@@ -1,5 +1,12 @@
 const { parseBody } = require('../appModules/http-utils/index');
-const { PATH_TO_RATING_FILE, WEIGHT } = require('../appModules/rating/index');
+const {
+	PATH_TO_RATING_FILE,
+	WEIGHT,
+	createRating,
+	updateRating,
+} = require('../appModules/rating/index');
+// const {createRating, updateRating} = require('../appModules/rating/index')
+
 async function voteRouteController(req, res) {
 	if (req.method !== 'POST') {
 		res.statusCode = 404;
