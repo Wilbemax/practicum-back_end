@@ -22,6 +22,7 @@ const form = document.querySelector(".vote");
 
 form.addEventListener("submit", async event => {
   event.preventDefault();
+  debugger
   const formData = new FormData(form);
   const obj = {
     id: (await object).id,
